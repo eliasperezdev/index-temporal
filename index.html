@@ -1,189 +1,94 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio | Desarrollador Web</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>En Mantenimiento</title>
     
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <script>
         tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#0f172a', // Slate 900
-                        secondary: '#1e293b', // Slate 800
-                        accent: '#22d3ee', // Cyan 400
-                    }
+          theme: {
+            extend: {
+              colors: {
+                'neon-green': '#39FF14', // Verde fosforescente clásico
+                'dark-bg': '#050505',
+              },
+              fontFamily: {
+                mono: ['Courier New', 'Courier', 'monospace'],
+              },
+              animation: {
+                'float': 'float 3s ease-in-out infinite',
+                'blink': 'blink 1s step-end infinite',
+              },
+              keyframes: {
+                float: {
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-10px)' },
+                },
+                blink: {
+                  '0%, 100%': { opacity: '1' },
+                  '50%': { opacity: '0' },
                 }
+              }
             }
+          }
         }
     </script>
 </head>
-<body class="bg-primary text-slate-300 font-sans leading-relaxed">
+<body class="bg-dark-bg text-neon-green font-mono h-screen flex flex-col items-center justify-center overflow-hidden selection:bg-neon-green selection:text-black">
 
-    <nav class="fixed w-full z-20 top-0 start-0 bg-primary/90 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <span class="self-center text-2xl font-bold whitespace-nowrap text-white"><span class="text-accent">&lt;</span>Dev<span class="text-accent">/&gt;</span></span>
+    <div class="absolute inset-0 z-0 opacity-10 pointer-events-none" 
+         style="background-image: radial-gradient(#39FF14 1px, transparent 1px); background-size: 30px 30px;">
+    </div>
+
+    <main class="z-10 relative p-8 border-2 border-neon-green rounded-lg shadow-[0_0_20px_rgba(57,255,20,0.4)] max-w-md w-full mx-4 text-center bg-black/80 backdrop-blur-sm">
+        
+        <div class="mb-6 animate-float">
+            <i class="fa-solid fa-cat text-6xl drop-shadow-[0_0_10px_rgba(57,255,20,0.8)]"></i>
+        </div>
+
+        <h1 class="text-3xl md:text-4xl font-bold mb-2 uppercase tracking-widest drop-shadow-[0_0_5px_rgba(57,255,20,0.8)]">
+            Mantenimiento
+        </h1>
+
+        <div class="h-0.5 w-full bg-neon-green mb-6 shadow-[0_0_10px_#39FF14]"></div>
+
+        <p class="text-lg mb-6 leading-relaxed">
+            Nuestros gatos ingenieros están persiguiendo el punto láser en el servidor.
+        </p>
+
+        <div class="w-full bg-gray-900 border border-neon-green h-4 rounded-full mb-2 overflow-hidden relative">
+            <div class="h-full bg-neon-green w-2/3 shadow-[0_0_10px_#39FF14] relative">
+                <div class="absolute inset-0 bg-white/30 w-full animate-[pulse_2s_infinite]"></div>
+            </div>
+        </div>
+        <p class="text-xs text-right mb-8 animate-pulse">Cargando croquetas... 65%</p>
+
+        <div class="flex justify-center space-x-6 text-2xl">
+            <a href="#" class="hover:text-white transition-colors duration-300 transform hover:scale-110">
+                <i class="fa-brands fa-github"></i>
             </a>
-            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-slate-700 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
-                    <li><a href="#inicio" class="block py-2 px-3 text-white bg-accent rounded md:bg-transparent md:text-accent md:p-0">Inicio</a></li>
-                    <li><a href="#proyectos" class="block py-2 px-3 text-slate-300 hover:text-white md:p-0 transition">Proyectos</a></li>
-                    <li><a href="#skills" class="block py-2 px-3 text-slate-300 hover:text-white md:p-0 transition">Stack</a></li>
-                    <li><a href="#contacto" class="block py-2 px-3 text-slate-300 hover:text-white md:p-0 transition">Contacto</a></li>
-                </ul>
-            </div>
+            <a href="#" class="hover:text-white transition-colors duration-300 transform hover:scale-110">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="#" class="hover:text-white transition-colors duration-300 transform hover:scale-110">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
         </div>
-    </nav>
 
-    <section id="inicio" class="min-h-screen flex items-center justify-center pt-20">
-        <div class="text-center px-4 max-w-4xl mx-auto">
-            <span class="bg-slate-800 text-accent text-xs font-medium me-2 px-2.5 py-0.5 rounded border border-accent/20 mb-4 inline-block">Disponible para trabajar</span>
-            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-6xl lg:text-7xl">
-                Creo experiencias web con <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Next.js y TypeScript</span>
-            </h1>
-            <p class="mb-8 text-lg font-normal text-slate-400 lg:text-xl sm:px-16 lg:px-48">
-                Transformo ideas en código limpio y escalable. Especializado en el desarrollo frontend moderno y la integración de APIs inteligentes.
-            </p>
-            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
-                <a href="#proyectos" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-primary bg-accent rounded-lg hover:bg-cyan-300 focus:ring-4 focus:ring-cyan-300/50 transition">
-                    Ver Proyectos
-                    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                    </svg>
-                </a>
-                <a href="https://github.com/TU_USUARIO" target="_blank" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg border border-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-slate-700 transition">
-                    <i class="fab fa-github mr-2"></i> GitHub
-                </a>
-            </div>
+        <div class="mt-8 text-sm text-left border-t border-neon-green/30 pt-4 opacity-70">
+            <span class="mr-2">></span> system_status: <span class="text-white">offline</span><br>
+            <span class="mr-2">></span> cat_nap: <span class="text-white">active</span><span class="animate-blink">_</span>
         </div>
-    </section>
 
-    <section id="skills" class="py-20 bg-secondary/30">
-        <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
-            <h2 class="mb-4 text-3xl font-bold tracking-tight text-white">Mi Stack Tecnológico</h2>
-            <p class="text-slate-400 mb-8">Herramientas que domino y utilizo en mi día a día</p>
-            
-            <div class="flex flex-wrap justify-center gap-4">
-                <div class="flex items-center p-4 bg-slate-800 rounded-lg border border-slate-700 hover:border-accent transition hover:-translate-y-1">
-                    <i class="fab fa-js text-yellow-400 text-2xl mr-3"></i>
-                    <span class="text-white font-medium">JavaScript</span>
-                </div>
-                <div class="flex items-center p-4 bg-slate-800 rounded-lg border border-slate-700 hover:border-accent transition hover:-translate-y-1">
-                    <i class="fas fa-code text-blue-500 text-2xl mr-3"></i> <span class="text-white font-medium">TypeScript</span>
-                </div>
-                <div class="flex items-center p-4 bg-slate-800 rounded-lg border border-slate-700 hover:border-accent transition hover:-translate-y-1">
-                    <i class="fab fa-react text-cyan-400 text-2xl mr-3"></i>
-                    <span class="text-white font-medium">React / Next.js</span>
-                </div>
-                <div class="flex items-center p-4 bg-slate-800 rounded-lg border border-slate-700 hover:border-accent transition hover:-translate-y-1">
-                    <i class="fab fa-node text-green-500 text-2xl mr-3"></i>
-                    <span class="text-white font-medium">Node.js</span>
-                </div>
-                <div class="flex items-center p-4 bg-slate-800 rounded-lg border border-slate-700 hover:border-accent transition hover:-translate-y-1">
-                    <i class="fas fa-wind text-sky-400 text-2xl mr-3"></i>
-                    <span class="text-white font-medium">Tailwind CSS</span>
-                </div>
-                <div class="flex items-center p-4 bg-slate-800 rounded-lg border border-slate-700 hover:border-accent transition hover:-translate-y-1">
-                    <i class="fas fa-database text-slate-400 text-2xl mr-3"></i>
-                    <span class="text-white font-medium">SQL / Prisma</span>
-                </div>
-            </div>
-        </div>
-    </section>
+    </main>
 
-    <section id="proyectos" class="py-20">
-        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
-            <h2 class="mb-12 text-3xl font-bold tracking-tight text-white text-center">Proyectos Destacados</h2>
-            
-            <div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2 lg:grid-cols-3">
-                
-                <div class="bg-secondary border border-slate-700 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-cyan-500/10 transition duration-300">
-                    <div class="h-48 bg-slate-700 flex items-center justify-center">
-                        <i class="fas fa-gamepad text-6xl text-slate-500"></i> </div>
-                    <div class="p-6">
-                        <span class="bg-blue-900 text-blue-300 text-xs font-medium me-2 px-2.5 py-0.5 rounded">Logic Game</span>
-                        <h3 class="mb-2 text-2xl font-bold tracking-tight text-white mt-3">Juego de Lógica</h3>
-                        <p class="mb-4 font-normal text-slate-400">Algoritmo complejo para la generación de tableros y validación de reglas en tiempo real usando TypeScript.</p>
-                        <a href="#" class="inline-flex items-center font-medium text-accent hover:underline">
-                            Ver Demo
-                            <svg class="w-4 h-4 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-secondary border border-slate-700 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-cyan-500/10 transition duration-300">
-                    <div class="h-48 bg-slate-700 flex items-center justify-center">
-                        <i class="fas fa-robot text-6xl text-slate-500"></i>
-                    </div>
-                    <div class="p-6">
-                        <span class="bg-purple-900 text-purple-300 text-xs font-medium me-2 px-2.5 py-0.5 rounded">AI Integration</span>
-                        <h3 class="mb-2 text-2xl font-bold tracking-tight text-white mt-3">Chatbot Inteligente</h3>
-                        <p class="mb-4 font-normal text-slate-400">Integración de la API de Gemini con una interfaz Next.js para respuestas en lenguaje natural.</p>
-                        <a href="#" class="inline-flex items-center font-medium text-accent hover:underline">
-                            Ver Código
-                            <svg class="w-4 h-4 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                 <div class="bg-secondary border border-slate-700 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-cyan-500/10 transition duration-300">
-                    <div class="h-48 bg-slate-700 flex items-center justify-center">
-                        <i class="fas fa-layer-group text-6xl text-slate-500"></i>
-                    </div>
-                    <div class="p-6">
-                        <span class="bg-green-900 text-green-300 text-xs font-medium me-2 px-2.5 py-0.5 rounded">Full Stack</span>
-                        <h3 class="mb-2 text-2xl font-bold tracking-tight text-white mt-3">Dashboard Admin</h3>
-                        <p class="mb-4 font-normal text-slate-400">Panel administrativo con autenticación, base de datos SQL y gráficos de rendimiento.</p>
-                        <a href="#" class="inline-flex items-center font-medium text-accent hover:underline">
-                            Ver Demo
-                            <svg class="w-4 h-4 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <footer id="contacto" class="bg-primary border-t border-slate-800">
-        <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-            <div class="md:flex md:justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <span class="self-center text-2xl font-bold whitespace-nowrap text-white">Hablemos</span>
-                    <p class="text-slate-400 mt-2 max-w-sm">¿Tienes un proyecto en mente? Estoy listo para nuevos desafíos.</p>
-                    <a href="mailto:tuemail@ejemplo.com" class="mt-4 inline-block text-accent hover:text-white transition font-medium">
-                        <i class="fas fa-envelope mr-2"></i> eliasdaniperez@gmail.com
-                    </a>
-                </div>
-                <div class="flex mt-4 sm:justify-center sm:mt-0 space-x-5">
-                    <a href="https://github.com/eliasperezdev" class="text-slate-400 hover:text-white transition text-xl">
-                        <i class="fab fa-github"></i>
-                        <span class="sr-only">GitHub account</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/elias-daniel-perez-8a0756145/" class="text-slate-400 hover:text-white transition text-xl">
-                        <i class="fab fa-linkedin"></i>
-                        <span class="sr-only">LinkedIn account</span>
-                    </a>
-                </div>
-            </div>
-            <hr class="my-6 border-slate-800 sm:mx-auto lg:my-8" />
-            <div class="sm:flex sm:items-center sm:justify-between">
-                <span class="text-sm text-slate-500 sm:text-center">© 2025 <a href="#" class="hover:underline">Elias Perez™</a>. Casi todos los derechos reservados.
-                </span>
-            </div>
-        </div>
-    </footer>
+    <i class="fa-solid fa-paw absolute top-10 left-10 text-neon-green opacity-20 text-4xl animate-bounce" style="animation-duration: 3s;"></i>
+    <i class="fa-solid fa-paw absolute bottom-20 right-10 text-neon-green opacity-20 text-2xl animate-bounce" style="animation-duration: 4s;"></i>
 
 </body>
 </html>
